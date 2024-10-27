@@ -23,25 +23,7 @@ $instance = $assembly.CreateInstance("ProgramNamespace.Program")
 $instance.RunO()
 ```  
 
-Load Dll method 1 (Invoke method from local file)  
-```powershell  
-# Get the current directory
-$currentDir = Get-Location
-
-# Load the DLL into memory
-$bytes = [IO.File]::ReadAllBytes("$currentDir\get-sec-history.dll")
-$assembly = [System.Reflection.Assembly]::Load($bytes)
-
-# Create an instance of the DefenderHistory class
-$type = $assembly.GetType("SecurityTools.DefenderHistory")
-
-# Invoke the static method GetProtectionHistory and display the output
-$output = $type.GetMethod("GetProtectionHistory").Invoke($null, $null)
-Write-Output $output
-
-```  
-
-Load DLL method 2 (Create instance from local file)  
+Load DLL method 1 (Create instance from local file)  
 ```powershell  
 # Get the current directory
 $currentDir = Get-Location
@@ -56,7 +38,7 @@ $output = $instance.GetProtectionHistory()
 Write-Output $output
 ```  
 
-Load DLL method 3 (Create instance from web request)  
+Load DLL method 2 (Create instance from web request)  
 ```powershell  
 # URL of the DLL on the web server
 $url = "https://github.com/timsonner/load-cs-dll-from-powershell/raw/refs/heads/master/get-sec-history.dll"
