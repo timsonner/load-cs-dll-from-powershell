@@ -1,4 +1,4 @@
-# Refletively load C# DLLs via PowerShell  
+# Reflectively load C# DLLs via PowerShell  
 
 Based on https://ruptura-infosec.com/hack-of-the-month/bypassing-threatlocker-with-powershell/  
 
